@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Kingdom Cafe — Where Every Cup Serves the King</title>
+<meta name="description" content="The Kingdom Cafe: chaat, pani puri and pav bhaji in Kavadiguda, Hyderabad. Fully licensed, FSSAI registered, and expanding — partner with us to bring a branch to your location." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F7F1E4;
+    --cream:#EFE6D0;
+    --parchment:#FAF5E9;
+    --ink:#1B1815;
+    --ink-soft:#4A413A;
+    --gold:#B8862A;
+    --gold-bright:#D4A548;
+    --gold-deep:#8B6420;
+    --crown:#A81B2E;
+    --crown-dark:#7A1220;
+    --line:rgba(184,134,42,.35);
+    --line-soft:rgba(184,134,42,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bone);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.02;letter-spacing:-.005em}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:11px;
+    color:var(--gold-deep);
+    font-weight:600;
+  }
+
+  /* THE MARK — crown-and-T monogram, hand-drawn SVG */
+  .mark{color:var(--gold)}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,241,228,.92);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand svg{width:34px;height:auto}
+  .brand .name{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.06em;font-weight:600;text-transform:uppercase}
+  .brand .name b{color:var(--gold-deep);font-weight:600}
+  .navlinks{display:flex;gap:32px;font-size:13px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.14em}
+  .navlinks a:hover{color:var(--gold-deep)}
+  .cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 20px;
+    background:var(--crown);color:var(--bone);
+    font-size:12px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;
+    border:1px solid var(--crown);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .cta:hover{background:var(--crown-dark);transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--ink);border-color:var(--gold)}
+  .cta.ghost:hover{background:var(--gold);color:var(--bone);border-color:var(--gold)}
+  @media (max-width:820px){.navlinks{display:none}}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:70px 0 100px;
+    text-align:center;
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(212,165,72,.16), transparent 60%),
+      var(--bone);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hero .logo-mark{
+    width:180px;height:auto;margin:0 auto 30px;color:var(--gold);
+    filter:drop-shadow(0 4px 20px rgba(184,134,42,.2));
+  }
+  .hero .est{
+    display:flex;align-items:center;justify-content:center;gap:16px;
+    margin-bottom:20px;
+    color:var(--gold-deep);
+    font-size:11px;letter-spacing:.4em;text-transform:uppercase;
+  }
+  .hero .est::before,.hero .est::after{
+    content:"";display:block;width:40px;height:1px;background:var(--gold);
+  }
+  h1.title{
+    font-size:clamp(56px,9vw,120px);
+    line-height:.92;font-weight:500;
+    letter-spacing:-.02em;
+    max-width:900px;margin:0 auto;
+  }
+  h1.title em{font-style:italic;color:var(--gold-deep);font-weight:400}
+  .tag{
+    margin-top:28px;
+    font-family:'Dancing Script',cursive;
+    color:var(--crown);
+    font-size:clamp(24px,3vw,32px);
+  }
+  .lede{
+    margin:28px auto 0;color:var(--ink-soft);
+    max-width:620px;font-size:17px;
+  }
+  .hero-actions{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero-meta{
+    margin-top:60px;display:flex;gap:0;justify-content:center;flex-wrap:wrap;
+    padding-top:36px;border-top:1px solid var(--line-soft);
+    max-width:900px;margin-left:auto;margin-right:auto;
+  }
+  .hero-meta div{padding:0 34px;border-right:1px solid var(--line-soft);text-align:center}
+  .hero-meta div:last-child{border-right:none}
+  .hero-meta b{display:block;color:var(--ink);font-size:14px;letter-spacing:.02em;margin-bottom:4px;font-weight:600}
+  .hero-meta span{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.14em}
+  @media (max-width:640px){.hero-meta div{border-right:none;border-bottom:1px solid var(--line-soft);padding:16px 0;width:100%}.hero-meta div:last-child{border-bottom:none}}
+
+  /* SECTIONS */
+  section{padding:110px 0;border-bottom:1px solid var(--line-soft);position:relative}
+  .section-head{
+    display:grid;grid-template-columns:1fr 1.6fr;gap:60px;
+    margin-bottom:70px;align-items:end;
+  }
+  @media (max-width:820px){.section-head{grid-template-columns:1fr;gap:20px}}
+  .section-head h2{font-size:clamp(42px,5.5vw,72px)}
+  .section-head h2 em{color:var(--gold-deep);font-style:italic;font-weight:400}
+  .section-head p{color:var(--ink-soft);font-size:17px;max-width:580px}
+  .section-eyebrow{
+    display:flex;align-items:center;gap:14px;margin-bottom:20px;
+  }
+  .section-eyebrow::before{
+    content:"";display:block;width:32px;height:1px;background:var(--gold);
+  }
+
+  /* CRAFT */
+  #craft{background:var(--parchment)}
+  .craft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  @media (max-width:820px){.craft-grid{grid-template-columns:1fr}}
+  .craft-card{
+    padding:44px 36px;border-right:1px solid var(--line-soft);
+  }
+  .craft-card:last-child{border-right:none}
+  @media (max-width:820px){.craft-card{border-right:none;border-bottom:1px solid var(--line-soft)}.craft-card:last-child{border-bottom:none}}
+  .craft-card .roman{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;color:var(--gold-deep);letter-spacing:.3em;
+    margin-bottom:20px;font-style:italic;
+  }
+  .craft-card h3{font-size:26px;margin-bottom:14px}
+  .craft-card p{color:var(--ink-soft);font-size:15px}
+
+  /* MENU */
+  #menu{background:var(--bone)}
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px}
+  @media (max-width:900px){.menu-grid{grid-template-columns:1fr;gap:44px}}
+  .menu-col h3{
+    font-size:42px;color:var(--ink);margin-bottom:4px;
+    font-style:italic;font-weight:500;
+  }
+  .menu-col h3 .amp{color:var(--gold-deep)}
+  .menu-col .sub{
+    color:var(--gold-deep);font-size:11px;
+    text-transform:uppercase;letter-spacing:.32em;
+    margin-bottom:28px;font-weight:600;
+  }
+  .menu-item{
+    display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:16px 0;border-bottom:1px dotted var(--line-soft);
+  }
+  .menu-item:last-child{border-bottom:none}
+  .menu-item span:first-child{font-size:16px;font-family:'Cormorant Garamond',serif;font-weight:500}
+  .menu-item .p{font-family:'Cormorant Garamond',serif;color:var(--gold-deep);font-weight:600;white-space:nowrap;font-size:17px;font-style:italic}
+  .menu-hero{
+    grid-column:1/-1;margin-top:30px;padding:44px;
+    background:linear-gradient(90deg,rgba(168,27,46,.06),rgba(184,134,42,.08));
+    border:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
+  }
+  .menu-hero h4{font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:8px}
+  .menu-hero p{color:var(--ink-soft);font-size:14px;margin-top:8px}
+  .specials{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    padding:9px 16px;border:1px solid var(--line);
+    font-size:13px;color:var(--ink);
+    background:var(--bone);
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+  }
+
+  /* SIGNATURE — 4 Waters (the differentiator) */
+  #signature{
+    background:var(--ink);color:var(--bone);
+  }
+  #signature .section-head h2,#signature .section-head p{color:var(--bone)}
+  #signature .section-head p{opacity:.75}
+  #signature .section-eyebrow{color:var(--gold-bright)}
+  #signature .section-head h2 em{color:var(--gold-bright)}
+  .waters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  @media (max-width:820px){.waters-grid{grid-template-columns:1fr 1fr}}
+  .water-card{
+    padding:32px 24px;
+    border:1px solid rgba(212,165,72,.22);
+    background:rgba(212,165,72,.04);
+    text-align:left;
+  }
+  .water-card .swatch{
+    width:44px;height:44px;border-radius:50%;
+    margin-bottom:24px;
+    box-shadow:0 0 30px currentColor;
+    opacity:.9;
+  }
+  .water-card .swatch.mint{background:#7fb069;color:#7fb069}
+  .water-card .swatch.tamarind{background:#8B4513;color:#8B4513}
+  .water-card .swatch.jaljeera{background:#c8a24c;color:#c8a24c}
+  .water-card .swatch.chilli{background:var(--crown);color:var(--crown)}
+  .water-card h4{font-size:22px;margin-bottom:6px;color:var(--bone)}
+  .water-card .hindi{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright);font-size:14px;margin-bottom:14px;letter-spacing:.05em}
+  .water-card p{font-size:13px;opacity:.7;line-height:1.5}
+  .price-callout{
+    text-align:center;margin-top:56px;padding-top:40px;
+    border-top:1px solid rgba(212,165,72,.22);
+  }
+  .price-callout .rs{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:110px;color:var(--gold-bright);line-height:1;font-weight:500;
+  }
+  .price-callout .lbl{
+    color:var(--bone);opacity:.75;letter-spacing:.32em;
+    text-transform:uppercase;font-size:12px;margin-top:8px;
+  }
+
+  /* PARTNER */
+  #partner{background:var(--cream)}
+  .partner-lead{
+    font-size:clamp(30px,3.6vw,48px);
+    font-family:'Cormorant Garamond',serif;
+    max-width:920px;line-height:1.15;margin-bottom:60px;font-weight:400;
+  }
+  .partner-lead em{color:var(--gold-deep);font-style:italic}
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  @media (max-width:820px){.stats{grid-template-columns:1fr 1fr}}
+  .stat{padding:36px 24px;border-right:1px solid var(--line-soft)}
+  .stat:last-child{border-right:none}
+  @media (max-width:820px){.stat{border-right:1px solid var(--line-soft)}.stat:nth-child(even){border-right:none}}
+  .stat b{
+    font-family:'Cormorant Garamond',serif;font-size:56px;
+    color:var(--gold-deep);display:block;line-height:1;font-weight:500;
+    font-style:italic;
+  }
+  .stat span{
+    display:block;margin-top:14px;font-size:12px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.18em;
+  }
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:70px;background:var(--line-soft)}
+  @media (max-width:820px){.why{grid-template-columns:1fr}}
+  .why-item{padding:36px 32px;background:var(--cream)}
+  .why-item h4{font-size:24px;margin-bottom:12px;color:var(--gold-deep);font-style:italic}
+  .why-item p{color:var(--ink-soft);font-size:15px}
+  .partner-cta{
+    margin-top:70px;padding:52px;
+    background:var(--ink);color:var(--bone);
+    display:grid;grid-template-columns:2fr 1fr;gap:30px;align-items:center;
+  }
+  @media (max-width:820px){.partner-cta{grid-template-columns:1fr;padding:36px}}
+  .partner-cta .eyebrow{color:var(--gold-bright);margin-bottom:10px}
+  .partner-cta h3{font-size:32px;margin-bottom:10px}
+  .partner-cta p{opacity:.75;font-size:15px}
+
+  /* CREDENTIALS */
+  .creds{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line-soft)}
+  @media (max-width:820px){.creds{grid-template-columns:1fr 1fr}}
+  .cred{padding:32px 26px;border-right:1px solid var(--line-soft)}
+  .cred:last-child{border-right:none}
+  @media (max-width:820px){.cred{border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}.cred:nth-child(even){border-right:none}.cred:nth-child(n+3){border-bottom:none}}
+  .cred .eyebrow{margin-bottom:16px}
+  .cred b{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;margin-bottom:10px;font-weight:600}
+  .cred code{
+    display:block;font-family:'Inter',monospace;font-size:12px;
+    color:var(--ink-soft);word-break:break-all;letter-spacing:.02em;
+  }
+
+  /* VISIT */
+  #visit{background:var(--parchment)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  @media (max-width:820px){.visit-grid{grid-template-columns:1fr;gap:50px}}
+  .visit-block .eyebrow{margin-bottom:16px}
+  .visit-block h3{font-size:36px;margin-bottom:26px}
+  .visit-block h3 em{color:var(--gold-deep);font-style:italic;font-weight:400}
+  .visit-line{
+    display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line-soft);
+  }
+  .visit-line:last-child{border-bottom:none}
+  .visit-line .lbl{
+    width:100px;flex-shrink:0;color:var(--gold-deep);
+    text-transform:uppercase;letter-spacing:.22em;font-size:11px;padding-top:4px;font-weight:600;
+  }
+  .visit-line .val{color:var(--ink);font-size:15px;line-height:1.5}
+  .visit-line .val a{color:var(--crown);border-bottom:1px dotted var(--crown)}
+  .visit-line .val a:hover{color:var(--crown-dark)}
+
+  /* FOOTER */
+  footer{padding:60px 0 40px;text-align:center;background:var(--bone);border-top:1px solid var(--line-soft)}
+  footer .logo-mark{width:60px;height:auto;margin:0 auto 20px;color:var(--gold)}
+  footer .name{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+  footer .name b{color:var(--gold-deep)}
+  footer .tag{font-family:'Dancing Script',cursive;color:var(--crown);font-size:22px;margin-bottom:18px}
+  footer p{color:var(--ink-soft);font-size:13px}
+  footer .fine{font-size:10px;letter-spacing:.24em;text-transform:uppercase;margin-top:20px;color:var(--gold-deep)}
+</style>
+</head>
+<body>
+
+<!-- MASTER MONOGRAM SVG (crown + ornate T, matches real logo aesthetic) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="kingdom-mark" viewBox="0 0 240 300">
+    <g fill="currentColor">
+      <!-- Crown: 3 orb-tipped spires + 2 dip peaks + band -->
+      <!-- Left orb -->
+      <circle cx="30" cy="18" r="8"/>
+      <!-- Center orb -->
+      <circle cx="120" cy="10" r="9"/>
+      <!-- Right orb -->
+      <circle cx="210" cy="18" r="8"/>
+
+      <!-- Left tall spire -->
+      <path d="M30 24 L52 88 L8 88 Z"/>
+      <!-- Left dip peak -->
+      <path d="M75 46 L88 88 L62 88 Z"/>
+      <!-- Center tall spire -->
+      <path d="M120 16 L145 88 L95 88 Z"/>
+      <!-- Right dip peak -->
+      <path d="M165 46 L178 88 L152 88 Z"/>
+      <!-- Right tall spire -->
+      <path d="M210 24 L232 88 L188 88 Z"/>
+
+      <!-- Crown band (rectangle with beveled bottom) -->
+      <path d="M4 88 L236 88 L232 108 L8 108 Z"/>
+
+      <!-- T top ornate serif caps (left and right) -->
+      <!-- Left cap - curls down like a jewel setting -->
+      <path d="M8 118 L52 118 L52 168 L38 168 L38 148 L22 148 L22 158 L8 158 Z"/>
+      <!-- Right cap - mirror -->
+      <path d="M188 118 L232 118 L232 158 L218 158 L218 148 L202 148 L202 168 L188 168 Z"/>
+
+      <!-- T top horizontal bar -->
+      <path d="M8 118 L232 118 L232 148 L8 148 Z"/>
+
+      <!-- T vertical stem -->
+      <rect x="100" y="148" width="40" height="125"/>
+
+      <!-- T base flare / foot -->
+      <path d="M58 273 L182 273 L170 293 L70 293 Z"/>
+      <!-- Base bottom line -->
+      <rect x="66" y="293" width="108" height="4"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">
+      <img src="logo.png" alt="Kingdom Cafe" class="mark" style="width:40px;height:auto;" />
+      <div class="name">The <b>Kingdom</b> Cafe</div>
+    </a>
+    <div class="navlinks">
+      <a href="#craft">The Craft</a>
+      <a href="#menu">Menu</a>
+      <a href="#signature">Signature</a>
+      <a href="#partner">Partner</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="#partner" class="cta">Open a Branch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <img src="logo.png" alt="Kingdom Cafe" class="logo-mark" style="width:200px;height:auto;display:block;margin:0 auto 30px;" />
+    <div class="est"><span>Established Hyderabad · 2026</span></div>
+    <h1 class="title">The Kingdom<br/><em>of</em> Chaat.</h1>
+    <p class="tag">"Where Every Cup Serves the King"</p>
+    <p class="lede">A small Kavadiguda kitchen putting royal treatment on street food — four hand-tuned waters, pav bhaji finished on butter, and chaat plated to order. Now inviting property owners to host our next crown.</p>
+    <div class="hero-actions">
+      <a href="#partner" class="cta">Partner With Us →</a>
+      <a href="#menu" class="cta ghost">See the Menu</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>Kavadiguda</b><span>Ashok Nagar, Hyderabad</span></div>
+      <div><b>Krishna Mohan</b><span>+91 91107 34628</span></div>
+      <div><b>Fully Licensed</b><span>FSSAI · Udyam · GHMC</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- CRAFT -->
+<section id="craft">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span class="eyebrow">The Craft</span></div>
+        <h2>Small kitchen.<br/><em>Royal treatment.</em></h2>
+      </div>
+      <p>The Kingdom Cafe was built on a simple idea — that a two-rupee bite of chaat deserves the same care as a fine-dining plate. Everything is sourced, prepped, and finished in-house, and every plate is built to order. Nothing sits.</p>
+    </div>
+    <div class="craft-grid">
+      <div class="craft-card">
+        <div class="roman">— I —</div>
+        <h3>Waters pressed each morning</h3>
+        <p>Mint, tamarind, jaljeera and chilli — four waters cold-steeped daily. When they're done, they're done.</p>
+      </div>
+      <div class="craft-card">
+        <div class="roman">— II —</div>
+        <h3>Plated to order</h3>
+        <p>Puris stay sealed until you order. Pav toasts on butter while your bhaji finishes on the tawa. No heat lamps.</p>
+      </div>
+      <div class="craft-card">
+        <div class="roman">— III —</div>
+        <h3>A fair crown</h3>
+        <p>Pani puri starts at ₹25. Chaat at ₹40. We refuse to price ourselves out of the neighbourhood that raised us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span class="eyebrow">The Menu</span></div>
+        <h2>The Royal <em>Court.</em></h2>
+      </div>
+      <p>Three houses under one crown — Pani Puri, Chaat, and Pav Bhaji. Every dish made to order, served hot, priced for everyone.</p>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-col">
+        <h3>Pani Puri</h3>
+        <div class="sub">The Signature · 4 Waters</div>
+        <div class="menu-item"><span>Masala Puri</span><span class="p">₹30</span></div>
+        <div class="menu-item"><span>Sev Puri</span><span class="p">₹30</span></div>
+        <div class="menu-item"><span>Sweet Puri</span><span class="p">₹30</span></div>
+        <div class="menu-item"><span>Dahi Puri</span><span class="p">₹40</span></div>
+      </div>
+
+      <div class="menu-col">
+        <h3>Chaat</h3>
+        <div class="sub">Plate by Plate</div>
+        <div class="menu-item"><span>Samosa Chaat</span><span class="p">₹40</span></div>
+        <div class="menu-item"><span>Papdi Chaat</span><span class="p">₹40</span></div>
+        <div class="menu-item"><span>Cutlet Chaat</span><span class="p">₹40</span></div>
+        <div class="menu-item"><span>Kachori Chaat</span><span class="p">₹40</span></div>
+        <div class="menu-item"><span>Bhel Puri</span><span class="p">₹40</span></div>
+      </div>
+
+      <div class="menu-col">
+        <h3>Pav Bhaji</h3>
+        <div class="sub">Finished on Butter</div>
+        <div class="menu-item"><span>Pav Bhaji</span><span class="p">₹60</span></div>
+        <div class="menu-item"><span>Masala Pav Bhaji</span><span class="p">₹70</span></div>
+        <div class="menu-item"><span>Butter Pav Bhaji</span><span class="p">₹70</span></div>
+        <div class="menu-item"><span>Cheese Pav Bhaji</span><span class="p">₹80</span></div>
+        <div class="menu-item"><span>Paneer Pav Bhaji</span><span class="p">₹100</span></div>
+      </div>
+
+      <div class="menu-hero">
+        <div>
+          <span class="eyebrow">The Court's Favourites</span>
+          <h4>Special Items</h4>
+          <p>Off-menu regulars — ask at the counter.</p>
+        </div>
+        <div class="specials">
+          <span class="chip">Dahi Papdi</span>
+          <span class="chip">Dahi Kachori</span>
+          <span class="chip">Dahi Samosa</span>
+          <span class="chip">Bread Omelette</span>
+          <span class="chip">Maggi & more…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE — 4 Waters -->
+<section id="signature">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span class="eyebrow">Our Signature</span></div>
+        <h2>Four waters.<br/><em>One crown.</em></h2>
+      </div>
+      <p>Every Kingdom pani puri comes with a choice of four waters, hand-tuned each morning. Order any single flavour, or ask for the flight and try all four. This is the dish we're known for.</p>
+    </div>
+
+    <div class="waters-grid">
+      <div class="water-card">
+        <div class="swatch mint"></div>
+        <h4>Mint & Coriander</h4>
+        <div class="hindi">Pudina Pani</div>
+        <p>Cold-steeped mint, coriander, green chilli, black salt. Bright and cooling.</p>
+      </div>
+      <div class="water-card">
+        <div class="swatch tamarind"></div>
+        <h4>Sweet Tamarind</h4>
+        <div class="hindi">Meetha Pani</div>
+        <p>Slow-reduced tamarind and jaggery with roasted cumin. Deep, dark, sweet-sour.</p>
+      </div>
+      <div class="water-card">
+        <div class="swatch jaljeera"></div>
+        <h4>Jaljeera</h4>
+        <div class="hindi">Zeera Pani</div>
+        <p>Roasted cumin, dry mango and mint. The classic North Indian summer cooler.</p>
+      </div>
+      <div class="water-card">
+        <div class="swatch chilli"></div>
+        <h4>Fiery Green Chilli</h4>
+        <div class="hindi">Teekha Pani</div>
+        <p>For the brave. Fresh green chilli, ginger, and a whisper of lime. Handle with care.</p>
+      </div>
+    </div>
+
+    <div class="price-callout">
+      <div class="rs">₹25</div>
+      <div class="lbl">Per Plate · Any Water</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="eyebrow">Own a Location? Read This.</span></div>
+    <p class="partner-lead">We're opening the next Kingdom Cafe. If you own a <em>shop, kiosk, or ground-floor space</em> in a busy Hyderabad neighbourhood — the crown fits well on your building.</p>
+
+    <div class="stats">
+      <div class="stat"><b>3</b><span>Menu categories, proven</span></div>
+      <div class="stat"><b>₹25</b><span>Entry price — mass appeal</span></div>
+      <div class="stat"><b>120</b><span>Sq. ft. minimum needed</span></div>
+      <div class="stat"><b>4</b><span>Licenses already in hand</span></div>
+    </div>
+
+    <div class="why">
+      <div class="why-item">
+        <h4>A tested kitchen, not a slide deck</h4>
+        <p>Our Kavadiguda outlet operates on FSSAI, GHMC Trade License, Udyam, and Shops & Establishments registrations. The compliance work is done. You'd be partnering with a running business, not a plan.</p>
+      </div>
+      <div class="why-item">
+        <h4>Small footprint, high frequency</h4>
+        <p>A 120 sq. ft. plinth is enough. Chaat is a repeat-visit category — the same customer comes back three times a week. Ideal for foot-traffic spots, colleges, office pockets, and residential mains.</p>
+      </div>
+      <div class="why-item">
+        <h4>Brand-forward, low friction</h4>
+        <p>The crown does the marketing. Signage, menu boards, packaging and the four-waters story are already designed. Your space plugs into an identity that customers recognise.</p>
+      </div>
+      <div class="why-item">
+        <h4>You keep control of your property</h4>
+        <p>We're open to rent, revenue-share, or a hybrid — whichever protects your interest in the space. We'll visit, discuss terms in person, and put everything in writing before a rupee moves.</p>
+      </div>
+    </div>
+
+    <div class="partner-cta">
+      <div>
+        <span class="eyebrow">Next Step</span>
+        <h3>Let's walk your space.</h3>
+        <p>Call or WhatsApp Krishna Mohan directly. We'll visit, take measurements, and share a written proposal within 48 hours.</p>
+      </div>
+      <div style="text-align:right">
+        <a href="tel:+919110734628" class="cta">Call +91 91107 34628</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span class="eyebrow">On Paper</span></div>
+        <h2>Fully licensed.<br/><em>Publicly registered.</em></h2>
+      </div>
+      <p>Every registration below is live, verifiable, and in the name of The Kingdom Cafe. Copies of any certificate can be shared on request during the partnership conversation.</p>
+    </div>
+
+    <div class="creds">
+      <div class="cred">
+        <div class="eyebrow">FSSAI</div>
+        <b>Food Safety Registration</b>
+        <code>23625030006759</code>
+      </div>
+      <div class="cred">
+        <div class="eyebrow">Udyam · MSME</div>
+        <b>Ministry of MSME</b>
+        <code>UDYAM-TS-02-0318306</code>
+      </div>
+      <div class="cred">
+        <div class="eyebrow">TG Shops Act</div>
+        <b>Registered · 14 Feb 2026</b>
+        <code>SEA/HYD/ALO/20/1276301/2026</code>
+      </div>
+      <div class="cred">
+        <div class="eyebrow">GHMC</div>
+        <b>Trade License</b>
+        <code>TR-4207-428-0001</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span class="eyebrow">Come Say Hello</span></div>
+        <h2>Visit the <em>Kingdom.</em></h2>
+      </div>
+      <p>Taste before you talk. Come by the Kavadiguda outlet, meet Krishna Mohan, and try the four waters — the fastest way to know whether this fits your location.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="visit-block">
+        <div class="eyebrow">Contact</div>
+        <h3>Krishna <em>Mohan</em></h3>
+        <div class="visit-line"><span class="lbl">Phone</span><span class="val"><a href="tel:+919110734628">+91 91107 34628</a></span></div>
+        <div class="visit-line"><span class="lbl">Partner</span><span class="val">Franchise & branch enquiries welcome</span></div>
+        <div class="visit-line"><span class="lbl">Reply</span><span class="val">Within 24 hours on WhatsApp</span></div>
+      </div>
+      <div class="visit-block">
+        <div class="eyebrow">Address</div>
+        <h3>Kavadiguda <em>Outlet</em></h3>
+        <div class="visit-line"><span class="lbl">Shop</span><span class="val">The Kingdom Cafe<br/>1-10-236/1, Ashok Nagar</span></div>
+        <div class="visit-line"><span class="lbl">City</span><span class="val">Kavadiguda, Hyderabad<br/>Telangana 500080</span></div>
+        <div class="visit-line"><span class="lbl">Maps</span><span class="val"><a href="https://maps.app.goo.gl/vzPew9kXXud5nZNf6" target="_blank" rel="noopener">Open in Google Maps ↗</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <img src="logo.png" alt="Kingdom Cafe" class="logo-mark" style="width:70px;height:auto;display:block;margin:0 auto 20px;" />
+    <div class="name">The <b>Kingdom</b> Cafe</div>
+    <div class="tag">"Where Every Cup Serves the King"</div>
+    <p>Kavadiguda, Hyderabad · +91 91107 34628</p>
+    <p class="fine">© 2026 The Kingdom Cafe · All Licenses in Order</p>
+  </div>
+</footer>
+
+</body>
+</html>
